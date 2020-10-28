@@ -1,0 +1,14 @@
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"> </script>
+<img  id="img"  src="./dog.png" crossOrigin></img>
+
+<script>
+  const img = document.getElementById('img');
+  mobilenet.load().then(model => {
+    model.classify(img).then(predictions => {
+      console.log('Predictions: ');
+      console.log(predictions);
+    });
+  });
+</script>
